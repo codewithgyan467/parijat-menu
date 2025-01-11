@@ -279,6 +279,34 @@ section h3 {
     }
 }
 
+/* Keyframes for fade-in animation */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for shaking effect on Y-axis */
+@keyframes shake {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+}
+
 /* Applying fade-in animation to containers */
 .container {
     animation: fadeInLeft 1.5s ease-in-out;
