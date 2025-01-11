@@ -21,10 +21,10 @@ header {
     /* Glowing effect */
     background: linear-gradient(to right, #ff7f50, #ff4500);
     color: #fff;
-    box-shadow: 0 0 10px rgba(255, 69, 0, 0.7), 
-                0 0 20px rgba(255, 69, 0, 0.6), 
-                0 0 40px rgba(255, 69, 0, 0.5), 
-                0 0 80px rgba(255, 69, 0, 0.4);
+    box-shadow: 0 0 10px rgba(245, 243, 243, 0.7), 
+                0 0 20px rgba(233, 230, 229, 0.6), 
+                0 0 40px rgba(230, 189, 175, 0.5), 
+                0 0 80px rgba(235, 228, 225, 0.4);
     border-radius: 10px;
 }
 
