@@ -1,203 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hotel PARIJAT Menu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #ffefeb, #f4f4f4);
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .rotating-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            animation: rotate 5s linear infinite;
+        }
 
-    .menu-container {
-      width: 90%;
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-
-    .header {
-  background: linear-gradient(135deg, #d4aaff, #ffffff, #e4c1f9);
-  color: #141313;
-  text-align: center;
-  padding: 20px; /* Increased padding for better spacing */
-  font-size: 2rem; /* Increased font size */
-  font-weight: 900; /* Extra bold text */
-  text-transform: uppercase; /* Makes the text all uppercase for emphasis */
-  letter-spacing: 2px; /* Adds spacing between letters for a stronger effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
-  border-bottom: 4px solid #d4aaff; /* Adds a decorative border below the header */
-}
-
-
-    .menu-section {
-      padding: 15px;
-      border-bottom: 1px solid #ddd;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      grid-gap: 15px;
-      align-items: center;
-    }
-
-    .menu-section h2 {
-      font-size: 1.5rem;
-      color: #333;
-      margin-bottom: 10px;
-      border-left: 4px solid #ff6f61;
-      padding-left: 10px;
-      grid-column: 1 / -1;
-    }
-
-    .menu-item {
-  display: flex;
-  justify-content: space-between;
-  margin: 8px 0;
-  padding: 10px;
-  background: linear-gradient(135deg, #d4aaff, #ffffff, #e4c1f9);
-  border-radius: 5px;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.menu-item:hover {
-  background: linear-gradient(135deg, #e5c3ff, #ffffff, #d8b4e5);
-  transform: scale(1.05);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.menu-item span {
-  font-size: 1rem;
-  color: #333;
-}
-
-.menu-item span:first-child {
-  font-weight: bold;
-}
-
-    .menu-image {
-      max-width: 100%;
-      border-radius: 8px;
-      animation: float 3s infinite ease-in-out;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .menu-container {
-        width: 95%;
-      }
-
-      .menu-section {
-        grid-template-columns: 1fr;
-      }
-
-      .menu-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .menu-item span {
-        margin: 5px 0;
-      }
-    }
-  </style>
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="menu-container">
-    <div class="header">HOTEL PARIJAT MENU</div>
-    <div id="menu-content"></div>
-  </div>
-
-  <script>
-    const menuData = [
-      {
-        category: "MOMOS & ROLLS",
-        image: "momo.jpeg",
-        items: [
-          { name: "Veg Momos", price: "30₹" },
-          { name: "Chicken Momos", price: "50₹" },
-          { name: "Veg Roll", price: "30₹" },
-          { name: "Egg Roll", price: "40₹" },
-          { name: "Chicken Roll", price: "50₹" },
-        ],
-      },
-      {
-        category: "CHOW MEIN & PULAO",
-        image: "chowmin.jpeg",
-        items: [
-          { name: "Veg Chow Mein", price: "30₹" },
-          { name: "Chicken Chow Mein", price: "50₹" },
-          { name: "Veg Pulao", price: "20₹" },
-          { name: "Chicken Pulao", price: "50₹" },
-        ],
-      },
-      {
-        category: "PAKORA & SNACKS",
-        image: "pakora.jpeg",
-        items: [
-          { name: "Chicken Pakora", price: "10₹" },
-          { name: "Piyaji Pakora", price: "10₹" },
-          { name: "Motor Ghugni", price: "10₹" },
-          { name: "Aloo Sop", price: "10₹" },
-          { name: "Bread Sop", price: "10₹" },
-        ],
-      },
-      {
-        category: "MAGGIE & OMLETTE",
-        image: "maggie.jpg",
-        items: [
-          { name: "Plain Maggie", price: "20₹" },
-          { name: "Egg Maggie", price: "30₹" },
-          { name: "Omlette", price: "15₹" },
-          { name: "Special Omlette", price: "20₹" },
-        ],
-      },
-      {
-        category: "SPECIAL ITEM",
-        image: "samosa.jpeg",
-        items: [
-          { name: "Chicken Dry Fry (Leg Piece)", price: "30₹" },
-          { name: "Dahi Singra", price: "20₹" },
-        ],
-      },
-    ];
-
-    const menuContainer = document.getElementById("menu-content");
-
-    menuData.forEach((section) => {
-      const sectionHTML = `
-        <div class="menu-section">
-          <h2>${section.category}</h2>
-          <img src="${section.image}" alt="${section.category}" class="menu-image" />
-          <div>
-            ${section.items
-              .map(
-                (item) =>
-                  `<div class="menu-item">
-                    <span>${item.name}</span>
-                    <span>${item.price}</span>
-                  </div>`
-              )
-              .join("")}
-          </div>
+    <header>
+        <h1>HOTEL PARIJAT MENU</h1>
+        <img src="japi.jpg" alt="Japi" class="rotating-image">
+    </header>
+    <div class="container">
+        <div class="card">
+            <section>
+                <div class="section main-course">
+                    <ul>
+                        <h3>MOMO & ROLLS</h3>
+                        <div class="images">
+                            <div class="image-container momo"></div>
+                        </div>
+                        <li>Veg Momos <span>30₹</span></li>
+                        <li>Chicken Momos <span>50₹</span></li>
+                        <li>Veg Roll <span>30₹</span></li>
+                        <li>Egg Roll <span>40₹</span></li>
+                        <li>Chicken Roll <span>50₹</span></li>
+                    </ul>
+                </div>
+            </section>
         </div>
-      `;
-      menuContainer.innerHTML += sectionHTML;
-    });
-  </script>
+
+        <div class="card">
+            <section>
+                <div class="section appetizers">
+                    <ul>
+                        <h3>CHOW MEIN & PULAO</h3>
+                        <div class="images1">
+                            <div class="image-container chow-pulao"></div>
+                        </div>
+                        <li>Veg Chow Mein <span>30₹</span></li>
+                        <li>Chicken Chow Mein <span>50₹</span></li>
+                        <li>Veg Pulao <span>20₹</span></li>
+                        <li>Chicken Pulao<span>50₹</span></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="card">
+            <section>
+                <div class="section beverages">
+                    <ul>
+                        <h3>MAGGIE & OMLETTE</h3>
+                        <div class="images">
+                            <div class="image-container maggi-omlet"></div>
+                        </div>
+                        <li>Plain Maggie <span>60₹</span></li>
+                        <li>Egg Maggie <span>30₹</span></li>
+                        <li>Omlette <span>90₹</span></li>
+                        <li>Special Omlette <span>100₹</span></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="card">
+            <section>
+                <div class="section appetizers">
+                    <ul>
+                        <h3>Special item</h3>
+                        <div class="images1">
+                            <div class="image-container chow-pulao"></div>
+                        </div>
+                        <li>Chicken Dry Fry <span>60₹</span></li>
+                        <li>Dahi Singra <span>30₹</span></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
+<script>
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card) => {
+        card.addEventListener('click', () => {
+            cards.forEach((c) => c.classList.remove('active'));
+            card.classList.add('active');
+        });
+    });
+</script>
+
 </html>
