@@ -11,15 +11,23 @@ header {
     position: sticky;
     font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box;
-    box-shadow: 0 0 3px black,
-        0 0 15px black;
     margin-top: 20px;
     width: 100vw;
     height: 10vh;
     text-align: center;
     top: 0;
     z-index: 100;
+
+    /* Glowing effect */
+    background: linear-gradient(to right, #ff7f50, #ff4500);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.7), 
+                0 0 20px rgba(255, 69, 0, 0.6), 
+                0 0 40px rgba(255, 69, 0, 0.5), 
+                0 0 80px rgba(255, 69, 0, 0.4);
+    border-radius: 10px;
 }
+
 
 body {
     font-family: Arial, sans-serif;
@@ -86,11 +94,13 @@ section h3 {
 }
 
 .section ul li {
-    font-size: 1.2em;
-    margin: 10px 0;
+    font-size: 1em; /* Reduced font size for a more compact look */
+    margin: 5px 0; /* Decreased margin between items */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Ensures spacing between items and prices */
+    padding: 0 70px; /* Added slight padding for uniform spacing */
 }
+
 
 /* .images {
     background: linear-gradient(to left , rgb(112, 48, 8) , rgb(214, 132, 80));
@@ -239,5 +249,75 @@ section h3 {
     .image-container {
         width: 150px;
         height: 150px;
+    }
+}
+/* Keyframes for fade-in animation */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for shaking effect */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+/* Applying fade-in animation to containers */
+.container {
+    animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.section {
+    animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.menu {
+    animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.contact {
+    animation: fadeInLeft 1.5s ease-in-out;
+}
+
+/* Applying shaking effect to menu pictures */
+.image-container {
+    animation: shake 1s infinite;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        animation: fadeInLeft 1.5s ease-in-out;
+    }
+
+    .section {
+        animation: fadeInLeft 1.5s ease-in-out;
+    }
+
+    .image-container {
+        animation: shake 1s infinite;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        animation: shake 1s infinite;
     }
 }
