@@ -97,35 +97,11 @@ section h3 {
     margin: 5px 0; /* Decreased margin between items */
     display: flex;
     justify-content: space-between; /* Ensures spacing between items and prices */
-    padding: 0 70px; /* Added slight padding for uniform spacing */
+    padding: 0 40px; /* Added slight padding for uniform spacing */
 }
 
 
-/* .images {
-    background: linear-gradient(to left , rgb(112, 48, 8) , rgb(214, 132, 80));
-    width: 280px;
-    height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50% 0 0 50%;
-} */
 
-/* .images1 {
-    background: linear-gradient(to left , rgb(112, 48, 8) , rgb(214, 132, 80));
-    width: 280px;
-    height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    border-radius: 0 50% 50% 0;
-} */
 
 .image-container {
     position: relative;
@@ -209,20 +185,6 @@ section h3 {
         border-radius: 80%;
         margin: 0 20px;
     }
-    /* .images {
-        background: linear-gradient(to left , rgb(112, 48, 8) , rgb(214, 132, 80));
-        width: 100px;
-        height: 100px;
-        display: flex;
-        align-items: flex-end;
-        right: 0;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        background-size: cover;
-        background-position: center;
-        border-radius: 50% 0 0 50%;
-    } */
     .images{
         display: flex;
         align-items: center;
@@ -346,3 +308,50 @@ section h3 {
         animation: shake 1s infinite;
     }
 }
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    bottom: 0;
+    width: 93vw;
+    height: 10vh;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    z-index: 100;
+   
+    padding: 0 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000000; /* Matches the header's text color */
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff; /* Highlighted text color */
+    transform: scale(1.1); /* Slight enlarging effect */
+}
+
+footer a i {
+    margin-left: 5px;
+    font-size: 1.2em;
+    color: #000;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover i {
+    color: #fff; /* Highlighted icon color */
+    transform: scale(1.2); /* Slight enlarging effect for icons */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+
