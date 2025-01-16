@@ -196,23 +196,20 @@ section h3 {
 }
 
 .momo {
-    background-image: url('/images/momo.jpeg');
+    background-image: url('/images/rosogulla.jpg');
     order: -1;
 }
 
 .chow-pulao {
-    background-image: url('/images/chowmin.jpeg');
+    background-image: url('/images/cake.jpg');
 }
 
 .maggi-omlet {
-    background-image: url('/images/maggie.jpeg');
+    background-image: url('/images/bun.jpg');
     order: -1;
 }
 
-.speacial-item {
-    background-image: url('/images/chiken.jpeg');
 
-}
 
 .contact {
     display: flex;
