@@ -166,14 +166,7 @@ section h3 {
     color: white; 
     animation: flowrev 2s alternate infinite;
 }
-@keyframes flowrev{
-    0%, 100%{
-        transform: translateY(0);
-    }
-    50%{
-        transform: translateY(10px);
-    }
-}
+
 
 
 
